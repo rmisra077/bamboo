@@ -1,0 +1,6 @@
+- Each trading strategy should have its own class
+- All algorithmic trading strategies inherit from one superclass
+- need to have a portfolio tracking mechanism (different stocks in different portfolios)
+
+Portfolios:
+- Need some sort of way to keep track of buying/selling prices to keep track of earnings over time

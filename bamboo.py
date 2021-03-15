@@ -74,7 +74,33 @@ def dashboard(account):
         print(str(i+1) + ".) " + account.portfolios[i].name + "; " + 
             "Strategy: " + account.portfolios[i].strategy.name)
 
+    print()
+    print('\033[95m' + "1: Edit a Portfolio" + '\033[0m')
+    print('\033[95m' + "2: Add New Portfolio" + '\033[0m')
+    print()
+    choice = int(input("Please Enter Choice: "))
+    print()
+    if(choice == 1):
+        portfolio_num = int(input("Enter portfolio number to edit (from above): "))
+        if(portfolio_num > len(account.portfolios)):
+            print('\033[91m' + "Portfolio number out of range!" + '\033[0m')
+            print("Redirecting you to your dashboard...")
+            time.sleep(1)
+            return dashboard(account)
+        else:
+            return edit_portfolio(account.portfolios[portfolio_num-1])
+    elif(choice == 2):
+        return add_portfolio()
+
     
+
+def edit_portfolio(portfolio):
+    clear()
+    print("EDITING PORTFOLIO")
+
+def add_portfolio():
+    clear()
+    print("ADDING PORTFOLIO")
 
 def create_account():
     clear()
